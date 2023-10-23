@@ -1,0 +1,16 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Standard Java Build and Test
+      uses: ci-consistency/main-actions@main
+      with:
+        java-version: '8'
+        build-command: 'gradle clean build'
+        distribution: 'adopt'
